@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import CounterState from "./components/counter/State/CounterState";
 import CounterReducer from "./components/counter/Reducer/CounterReducer";
+import SwitchColorButton from "./components/counter/Context/SwitchColorBtn";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
       <div className="counter">
         <CounterState />
         <CounterReducer />
+        {/* <SwitchColorButton /> */}
       </div>
     </div>
   );

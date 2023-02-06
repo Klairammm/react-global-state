@@ -11,3 +11,35 @@ const themes = {
     background: "#222222",
   },
 };
+
+const ThemeContext = React.createContext(themes.light);
+
+function SwitchColorButton() {
+  return (
+    <ThemeContext.Provider value={dark}>
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar() {
+  return (
+    <div>
+      <ThemedButton />
+    </div>
+  );
+}
+
+function ThemedButton() {
+  const theme = useContext(ThemeContext);
+
+  return (
+    <>
+      <button style={{ background: theme.background, color: theme.foreground }}>
+        Switch Color
+      </button>
+    </>
+  );
+}
+
+export default SwitchColorButton;
